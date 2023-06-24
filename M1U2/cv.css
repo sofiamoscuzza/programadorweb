@@ -1,0 +1,38 @@
+h1 {
+    color: yellow;
+    text-align: center;
+    text-transform: inherit;
+    background-color: black;
+}
+
+img {
+    width: 250px;
+    border: 10px solid black;
+}
+
+h2 {
+    color: yellow;
+    font-size: 35px;
+    font-style: oblique;
+}
+
+h3 {
+    font-variant: small-caps;
+}
+
+ul {
+    color: #ffb400;
+}
+
+ol {
+    color: #ffb400;
+}
+
+.ciudad {
+    font-size: 25px;
+}
+
+p {
+    color: #ffb400;
+    font-size: 15px;
+}
