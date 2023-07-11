@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 1</title>
+    <script type="text/javascript">
+        const metros = parseInt(prompt('ingrese cuàntos metros tiene que recorrer:', ''));
+
+        if (metros < 1000) {
+            document.write('usted irà a pie');
+        } else if (metros == 1000 || metros < 10000) {
+            document.write('usted irà en bicicleta');
+        } else if (metros == 10000 || metros < 30000) {
+            document.write('usted irà en colectivo');
+        } else if (metros == 30000 || metros <100000) {
+            document.write('usted irà en auto');
+        } else {
+            document.write('usted irà en aviòn')
+        }
+    </script>
+
+</head>
+
+<body></body>
+
+</html>
