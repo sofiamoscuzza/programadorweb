@@ -1,10 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var novedadesModel = require('../models/novedadesModel');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', async function (req, res, next) {
+
+  var novedades = await novedadesModel.getNovedades();
+
+  res.render('index', {
+    //title: 'Express',
+    novedades
+  });
 });
 
 router.post('/', async (req, res, next) => {
@@ -21,22 +28,22 @@ router.post('/', async (req, res, next) => {
     to: 'sofimoscuzza@hotmail.com',
     subject: "Contacto desde la web",
     html: name + "" + surname + "se contacto y quiere mas info a este correo: " + email + mensaje + ".<br> Su tel es " + tel
-}
+  }
 
   var transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  }
-})
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    }
+  })
 
-var info = await transporter.sendMail(obj);
+  var info = await transporter.sendMail(obj);
 
-res.render('index', {
-  message: 'Mensaje enviado correctamente',
-});
+  res.render('index', {
+    message: 'Mensaje enviado correctamente',
+  });
 
 });
 

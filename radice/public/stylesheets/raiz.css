@@ -49,8 +49,8 @@ p, p1 {
 }
 
 .lista-novedades li a img {
-    width: 420px;
-    height: 500px;
+    width: 210px;
+    height: 250px;
     filter: greyscale();
     transition: all.2s ease-in-out;
     margin-right: 1rem;

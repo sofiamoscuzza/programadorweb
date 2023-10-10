@@ -12,14 +12,46 @@
         <div id="novedades" class="col-md-5 offset-md-2 scroll_section ">
             <h2>Novedades</h2>
             <ul class="lista-novedades">
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="images/plato.jpg">
+                 <li>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="images/plato.jpg">
                         Nueva
-                        receta </a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1"><img src="images/plato1.jpg">
+                        receta </a>
+                </li>
+                <li>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1"><img src="images/plato1.jpg">
                         Nueva
-                        receta </a></li>
+                        receta </a>
+                </li> 
+                {{#each novedades}}
+                <li>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}">{{titulo}}</a>
+                </li>
+                {{/each}}
+
             </ul>
+        </div> <!-- cierra novedades -->
+        <!--Modal-->
+
+        {{#each novedades}}
+        <div class="modal" id="Modal{{id}}" tabindex="-1" id="exampleModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">{{Titulo}} </h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="Modal body">
+                        <h5>{{subtitulo}} </h5>
+                        <p>{{cuerpo}} </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        {{/each}}
+
         <div class="modal" tabindex="-1" id="exampleModal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -51,7 +83,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
+
+
 
         <div class="col-md-3 my-3">
             <div class="rounded py-5 testimonios">
@@ -134,7 +168,9 @@
         </div>
     </div>
 
-    <div id="nosotros" class="row align-items-stretch my-3 staff py-4 scroll_section ">
+
+
+    <div id="nosotros" class="row align-items-stretch my-3 staff py-4 scroll_section" >
         <div class="col-lg-8 offset-lg-2">
             <h2>Nosotros</h2>
             <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -236,4 +272,4 @@
             <p> {{message}}</p>
         </div>
     </div>
-</div>  
+</div>
