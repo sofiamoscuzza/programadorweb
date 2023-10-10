@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+<<<<<<< HEAD
 var novedadesModel = require('../../models/novedadesModel');
 
 /* GET novedades page. */
@@ -91,3 +92,15 @@ router.post('/modificar', async (req, res, next) => {
 module.exports = router;
 
 //buscador es Get - formularios es Post
+=======
+
+
+router.get('/', function (req, res, next) {
+    res.render('admin/novedades', {
+        layout: 'admin/layout',
+        persona: req.session.nombre
+    });
+});
+
+module.exports = router;
+>>>>>>> 4b6e6087a8f1c7703b05f0fcdf717d18440ce4c6

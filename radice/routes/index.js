@@ -28,6 +28,17 @@ router.post('/', async (req, res, next) => {
     to: 'sofimoscuzza@hotmail.com',
     subject: "Contacto desde la web",
     html: name + "" + surname + "se contacto y quiere mas info a este correo: " + email + mensaje + ".<br> Su tel es " + tel
+<<<<<<< HEAD
+=======
+}
+
+  var transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: process.env.SMTP_PORT,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+>>>>>>> 4b6e6087a8f1c7703b05f0fcdf717d18440ce4c6
   }
 
   var transporter = nodemailer.createTransport({
